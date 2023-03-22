@@ -1,0 +1,12 @@
+{% load my_tag %}
+<div class="list-group">
+    {% get_groups as object_list %}
+    {% for item in object_list %}
+    <a href="{% url 'group' item.pk %}"
+       class="list-group-item list-group-item-action">
+        {{ item.name }}
+    </a>
+    {% endfor %}
+</div>
+
+

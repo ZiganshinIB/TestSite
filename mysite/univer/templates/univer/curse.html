@@ -1,0 +1,29 @@
+{% extends 'base_curse.html' %}
+{% block big_content %}
+<div class="container row col-12 gx-1">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ object.title }}</h5>
+                <p class="card-text">{{ object.description}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <img src="{{ object.photo.url }} " class="img-fluid" alt="...">
+    </div>
+    <br>
+    <div class="row col-8 mx-auto gy-3">
+        <div class="row col-6 mx-auto">
+            <a href="{% url 'homeworks' object.pk %}" type="button" class="btn btn-primary btn-sm">Домашка</a>
+        </div>
+        <div class="row col-6 mx-auto">
+            <a href="{% url 'create_homework' object.pk %}" type="button" class="btn btn-secondary btn-sm">Добавить</a>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
+{% block footer %}{% endblock %}

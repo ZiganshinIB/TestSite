@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block sidebar %}
+{% include 'inc/_groups_bar.html' %}
+{% endblock %}
+{% block content %}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for item in object_list %}
+    <div class="col">
+        <div class="card h-100">
+            <img src=" {{ item.photo.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+                <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Просмотрет</a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
+
+

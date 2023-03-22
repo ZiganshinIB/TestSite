@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Добавить Группу {% endblock %}
+{% block sidebar %}
+{% include 'inc/_groups_bar.html' %}
+{% endblock %}
+{% block big_content %}
+<div class="container row col-12 gy-3">
+<form enctype="multipart/form-data" action="{% url 'create_curse' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-primary btn-block">Добавить</button>
+</form>
+</div>
+{% endblock %}
